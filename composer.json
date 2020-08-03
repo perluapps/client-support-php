@@ -1,7 +1,7 @@
 {
     "name": "perluapps/client-support",
     "description": "Client Support - A Simple Client To Support Dashboard",
-    "type": "project",
+    "type": "library",
     "license": "MIT",
     "authors": [
         {
