@@ -13,17 +13,16 @@ class Subscription
             'Content-Type' => 'application/json',
         );
         $requestBody = array(
-            'code' => $subscription->code,
-            'company' => $subscription->company,
-            'name' => $subscription->name,
-            'email' => $subscription->email,
-            'phone' => $subscription->phone,
-            'business_type' => $subscription->business_type,
-            'address' => $subscription->address,
-            'province_id' => $subscription->province_id,
-            'regency_id' => $subscription->regency_id,
-            'district_id' => $subscription->district_id,
-            'app_mode' => $subscription->app_mode,
+            'invoice_number' => $subscription->invoice_number,
+            'member_id' => $subscription->member_id,
+            'member_phone' => $subscription->member_phone,
+            'member_email' => $subscription->member_email,
+            'unique_number' => $subscription->unique_number,
+            'tax_amount' => $subscription->tax_amount,
+            'discount_amount' => $subscription->discount_amount,
+            'fee' => $subscription->fee,
+            'payment_status' => $subscription->payment_status,
+            'type' => $subscription->type,
         );
         $finalUrl = $url . "use-subscription";
         $requestBodyJson = Request\Body::Json($requestBody);
