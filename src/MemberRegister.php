@@ -2,6 +2,7 @@
 
 
 namespace Perluapps\ClientSupport;
+
 use Unirest\Request;
 
 class MemberRegister
@@ -24,7 +25,8 @@ class MemberRegister
             'district_id' => $member->district_id,
             'app_mode' => $member->app_mode,
         );
+        $finalUrl = $url . "member-registration";
         $requestBodyJson = Request\Body::Json($requestBody);
-        Request::post($url, $requestHeader, $requestBodyJson);
+        Request::post($finalUrl, $requestHeader, $requestBodyJson);
     }
 }
