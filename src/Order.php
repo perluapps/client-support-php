@@ -28,7 +28,7 @@ class Order
             'order_status' => $order->order_status,
             'last_modified_by' => $order->last_modified_by,
         );
-        $finalUrl = $url . "add-order";
+        $finalUrl = $url . "/api/v1/add-order";
         $requestBodyJson = Request\Body::Json($requestBody);
         Request::post($finalUrl, $requestHeader, $requestBodyJson);
     }

@@ -25,7 +25,7 @@ class MemberRegister
             'district_id' => $member->district_id,
             'app_mode' => $member->app_mode,
         );
-        $finalUrl = $url . "member-registration";
+        $finalUrl = $url . "/api/v1/member-registration";
         $requestBodyJson = Request\Body::Json($requestBody);
         Request::post($finalUrl, $requestHeader, $requestBodyJson);
     }

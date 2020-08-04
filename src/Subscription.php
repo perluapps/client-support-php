@@ -24,7 +24,7 @@ class Subscription
             'payment_status' => $subscription->payment_status,
             'type' => $subscription->type,
         );
-        $finalUrl = $url . "use-subscription";
+        $finalUrl = $url . "/api/v1/use-subscription";
         $requestBodyJson = Request\Body::Json($requestBody);
         Request::post($finalUrl, $requestHeader, $requestBodyJson);
     }
