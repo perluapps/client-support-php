@@ -26,6 +26,7 @@ class Subscription
         );
         $finalUrl = $url . "/api/v1/use-subscription";
         $requestBodyJson = Request\Body::Json($requestBody);
-        Request::post($finalUrl, $requestHeader, $requestBodyJson);
+        $response = Request::post($finalUrl, $requestHeader, $requestBodyJson);
+        error_log($response->raw_body);
     }
 }
