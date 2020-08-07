@@ -15,6 +15,7 @@ class Order
         );
         $requestBody = array(
             'outlet_id' => $order->outlet_id,
+            'outlet_name' => $order->outlet_name,
             'customer_id' => $order->customer_id,
             'invoice_number' => $order->invoice_number,
             'customer_name' => $order->customer_name,
