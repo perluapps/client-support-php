@@ -1,3 +1,6 @@
+Version 1.0.6:
+ - change get data from company name, company address, etc
+
 Version 1.0.5:
  - add bumpversion
 
