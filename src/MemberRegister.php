@@ -13,7 +13,7 @@ class MemberRegister
             'Content-Type' => 'application/json',
         );
         $requestBody = array(
-            'code' => $member->code,
+            'code' => $member->company->code,
             'company' => $member->company->name,
             'name' => $member->name,
             'email' => $member->email,
