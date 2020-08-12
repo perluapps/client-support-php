@@ -34,4 +34,19 @@ class Order
         $response = Request::post($finalUrl, $requestHeader, $requestBodyJson);
         error_log($response->raw_body);
     }
+
+    public function updateStatus($url, $order) {
+        $requestHeader = array(
+            'Content-Type' => 'application/json',
+        );
+        $requestBody = array(
+            'invoice_number' => $order->invoice_number,
+            'order_status' => $order->order_status,
+        );
+        $finalUrl = $url . "/api/v1/update-order-status";
+        $requestBodyJson = Request\Body::Json($requestBody);
+        $response = Request::post($finalUrl, $requestHeader, $requestBodyJson);
+        error_log($response->raw_body);
+    }
+
 }

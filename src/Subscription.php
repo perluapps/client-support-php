@@ -29,4 +29,19 @@ class Subscription
         $response = Request::post($finalUrl, $requestHeader, $requestBodyJson);
         error_log($response->raw_body);
     }
+
+    public function updateStatus($url, $subscription) {
+        $requestHeader = array(
+            'Content-Type' => 'application/json',
+        );
+        $requestBody = array(
+            'invoice_number' => $subscription->invoice_number,
+            'payment_status' => $subscription->order_status,
+        );
+        $finalUrl = $url . "/api/v1/update-subscription-status";
+        $requestBodyJson = Request\Body::Json($requestBody);
+        $response = Request::post($finalUrl, $requestHeader, $requestBodyJson);
+        error_log($response->raw_body);
+    }
+
 }
