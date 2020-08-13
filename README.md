@@ -18,10 +18,10 @@ Library ini support Laravel :
 
 
 ## Fitur Library
-
-* [Installasi](https://github.com/odenktools/laravel-bca#instalasi)
-* [Setting](https://github.com/odenktools/laravel-bca#koneksi-dan-setting)
-* [Login](https://github.com/odenktools/laravel-bca#login)
+* Add Order
+* Use Subscription
+* Update Status Order
+* Update Status Subscription
 
 ### INSTALASI
 
