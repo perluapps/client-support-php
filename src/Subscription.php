@@ -36,7 +36,7 @@ class Subscription
         );
         $requestBody = array(
             'invoice_number' => $subscription->invoice_number,
-            'payment_status' => $subscription->order_status,
+            'payment_status' => $subscription->payment_status,
         );
         $finalUrl = $url . "/api/v1/update-subscription-status";
         $requestBodyJson = Request\Body::Json($requestBody);
