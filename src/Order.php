@@ -41,6 +41,7 @@ class Order
         );
         $requestBody = array(
             'invoice_number' => $order->invoice_number,
+            'payment_channel' => $order->payment_channel,
             'order_status' => $order->order_status,
         );
         $finalUrl = $url . "/api/v1/update-order-status";
