@@ -1,3 +1,6 @@
+Version 1.2.0:
+ - add payment channel on Order
+
 Version 1.1.0:
  - add function for update status on order and subscription
 
