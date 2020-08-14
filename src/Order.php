@@ -13,7 +13,7 @@ class Order
      * @param $url
      * @param $order
      * @param $companyCode
-     * @throws \Unirest\Exception
+     * @throws
      */
     public function send($url, $order, $companyCode)
     {
@@ -48,9 +48,10 @@ class Order
      * With Unirest HttpClient with ContentType application/json
      * @param $url
      * @param $order
-     * @throws \Unirest\Exception
+     * @throws
      */
-    public function updateStatus($url, $order) {
+    public function updateStatus($url, $order)
+    {
         $requestHeader = array(
             'Content-Type' => 'application/json',
         );

@@ -10,7 +10,7 @@ class Subscription
     /**
      * @param $url
      * @param $subscription
-     * @throws \Unirest\Exception
+     * @throws
      */
     public function send($url, $subscription)
     {
@@ -38,9 +38,10 @@ class Subscription
     /**
      * @param $url
      * @param $subscription
-     * @throws Exception
+     * @throws
      */
-    public function updateStatus($url, $subscription) {
+    public function updateStatus($url, $subscription)
+    {
         $requestHeader = array(
             'Content-Type' => 'application/json',
         );

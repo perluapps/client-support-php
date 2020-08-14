@@ -12,7 +12,7 @@ class MemberRegister
      * Using Unirest HttpClient with ContentType application/json
      * @param $url
      * @param $member
-     * @throws \Unirest\Exception
+     * @throws
      */
     public function send($url, $member)
     {
