@@ -17,6 +17,10 @@ class ClientSupport
         $this->type = $type;
     }
 
+    /**
+     * factory from class ClientSupport itself
+     * @return MemberRegister|Order|Subscription|string
+     */
     public function factory()
     {
         switch ($this->type) {

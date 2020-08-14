@@ -3,18 +3,25 @@
 
 namespace Perluapps\ClientSupport;
 
-
 use Unirest\Request;
 
 class Order
 {
-    public function send($url, $order, $company_code)
+    /**
+     * Send Add Order To Dashboard Support
+     * using Unirest HttpClient with ContentType application/json
+     * @param $url
+     * @param $order
+     * @param $companyCode
+     * @throws \Unirest\Exception
+     */
+    public function send($url, $order, $companyCode)
     {
         $requestHeader = array(
             'Content-Type' => 'application/json',
         );
         $requestBody = array(
-            'company_code' => $company_code,
+            'company_code' => $companyCode,
             'outlet_id' => $order->outlet_id,
             'outlet_name' => $order->outlet_name,
             'customer_id' => $order->customer_id,
@@ -36,6 +43,13 @@ class Order
         error_log($response->raw_body);
     }
 
+    /**
+     * Send Update Status on Dashboard Support
+     * With Unirest HttpClient with ContentType application/json
+     * @param $url
+     * @param $order
+     * @throws \Unirest\Exception
+     */
     public function updateStatus($url, $order) {
         $requestHeader = array(
             'Content-Type' => 'application/json',

@@ -7,6 +7,13 @@ use Unirest\Request;
 
 class MemberRegister
 {
+    /**
+     * Send Data Member Register To Dashboard Support
+     * Using Unirest HttpClient with ContentType application/json
+     * @param $url
+     * @param $member
+     * @throws \Unirest\Exception
+     */
     public function send($url, $member)
     {
         $requestHeader = array(

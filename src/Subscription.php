@@ -7,6 +7,11 @@ use Unirest\Request;
 
 class Subscription
 {
+    /**
+     * @param $url
+     * @param $subscription
+     * @throws \Unirest\Exception
+     */
     public function send($url, $subscription)
     {
         $requestHeader = array(
@@ -30,6 +35,11 @@ class Subscription
         error_log($response->raw_body);
     }
 
+    /**
+     * @param $url
+     * @param $subscription
+     * @throws Exception
+     */
     public function updateStatus($url, $subscription) {
         $requestHeader = array(
             'Content-Type' => 'application/json',
