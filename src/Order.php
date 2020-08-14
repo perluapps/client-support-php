@@ -8,12 +8,13 @@ use Unirest\Request;
 
 class Order
 {
-    public function send($url, $order)
+    public function send($url, $order, $company_code)
     {
         $requestHeader = array(
             'Content-Type' => 'application/json',
         );
         $requestBody = array(
+            'company_code' => $company_code,
             'outlet_id' => $order->outlet_id,
             'outlet_name' => $order->outlet_name,
             'customer_id' => $order->customer_id,
