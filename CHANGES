@@ -1,3 +1,7 @@
+Version 1.2.7:
+ - add support for warehouse(not fixed)  1. add Class For WareHouse  2. add method send on class WareHouse
+ - change typo on README.md
+
 Version 1.2.6:
 
 
