@@ -30,8 +30,10 @@ class ClientSupport
                 return new Order();
             case "subscription":
                 return new Subscription();
+            case "warehouse":
+                return new WareHouse();
             default:
-                return "type should be register , order or subscription";
+                return "type should be register , order, warehouse or subscription";
         }
     }
 }
