@@ -21,6 +21,7 @@ class Order
             'Content-Type' => 'application/json',
         );
         $requestBody = array(
+            'order_id' => $order->id,
             'company_code' => $companyCode,
             'outlet_id' => $order->outlet_id,
             'outlet_name' => $order->outlet_name,
@@ -56,6 +57,7 @@ class Order
             'Content-Type' => 'application/json',
         );
         $requestBody = array(
+            'order_id' => $order->id,
             'invoice_number' => $order->invoice_number,
             'payment_channel' => $order->payment_channel,
             'order_status' => $order->order_status,
