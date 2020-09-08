@@ -17,13 +17,13 @@ Library ini support Laravel :
 - [ ] Laravel 7.0.x
 
 
-## Fitur Library
+## Feature Library
 * Add Order
 * Use Subscription
 * Update Status Order
 * Update Status Subscription
 
-### INSTALASI
+### INSTALLATION
 
 ```bash
 composer require perluapps/client-support-php

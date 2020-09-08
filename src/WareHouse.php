@@ -3,25 +3,24 @@
 
 namespace Perluapps\ClientSupport;
 
+
 use Unirest\Request;
 
-class Order
+class WareHouse
 {
     /**
-     * Send Add Order To Dashboard Support
-     * using Unirest HttpClient with ContentType application/json
      * @param $url
      * @param $order
      * @param $companyCode
-     * @throws
+     * @throws \Unirest\Exception
      */
     public function send($url, $order, $companyCode)
     {
         $requestHeader = array(
             'Content-Type' => 'application/json',
         );
+
         $requestBody = array(
-            'order_id' => $order->id,
             'company_code' => $companyCode,
             'outlet_id' => $order->outlet_id,
             'outlet_name' => $order->outlet_name,
@@ -37,35 +36,12 @@ class Order
             'table_no' => $order->table_no,
             'order_status' => $order->order_status,
             'last_modified_by' => $order->last_modified_by,
+            'order_items' => $order->products,
         );
+
         $finalUrl = $url . "/api/v1/add-order";
         $requestBodyJson = Request\Body::Json($requestBody);
         $response = Request::post($finalUrl, $requestHeader, $requestBodyJson);
         error_log($response->raw_body);
     }
-
-    /**
-     * Send Update Status on Dashboard Support
-     * With Unirest HttpClient with ContentType application/json
-     * @param $url
-     * @param $order
-     * @throws
-     */
-    public function updateStatus($url, $order)
-    {
-        $requestHeader = array(
-            'Content-Type' => 'application/json',
-        );
-        $requestBody = array(
-            'order_id' => $order->id,
-            'invoice_number' => $order->invoice_number,
-            'payment_channel' => $order->payment_channel,
-            'order_status' => $order->order_status,
-        );
-        $finalUrl = $url . "/api/v1/update-order-status";
-        $requestBodyJson = Request\Body::Json($requestBody);
-        $response = Request::post($finalUrl, $requestHeader, $requestBodyJson);
-        error_log($response->raw_body);
-    }
-
 }
