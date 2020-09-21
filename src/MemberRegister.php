@@ -20,6 +20,7 @@ class MemberRegister
             'Content-Type' => 'application/json',
         );
         $requestBody = array(
+            'member_id' => $member->id,
             'code' => $member->company->code,
             'company' => $member->company->name,
             'name' => $member->name,
@@ -31,10 +32,32 @@ class MemberRegister
             'regency_id' => $member->company->regency_id,
             'district_id' => $member->company->district_id,
             'app_mode' => $member->app_mode,
+            'status' => $member->member,
         );
         $finalUrl = $url . "/api/v1/member-registration";
         $requestBodyJson = Request\Body::Json($requestBody);
         $response = Request::post($finalUrl, $requestHeader, $requestBodyJson);
         error_log($response->raw_body);
     }
+
+    /**
+     * @param $url
+     * @param $member
+     * @throws
+     */
+    public function updateStatus($url, $member)
+    {
+        $requestHeader = array(
+            'Content-Type' => 'application/json',
+        );
+        $requestBody = array(
+            'member_id' => $member->id,
+            'status' => $member->status,
+        );
+        $finalUrl = $url . "/api/v1/update-member-status";
+        $requestBodyJson = Request\Body::Json($requestBody);
+        $response = Request::post($finalUrl, $requestHeader, $requestBodyJson);
+        error_log($response->raw_body);
+    }
+
 }
