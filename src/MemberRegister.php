@@ -33,6 +33,7 @@ class MemberRegister
             'district_id' => $member->company->district_id,
             'app_mode' => $member->app_mode,
             'status' => $member->member,
+            'created_at' => $member->created_at,
         );
         $finalUrl = $url . "/api/v1/member-registration";
         $requestBodyJson = Request\Body::Json($requestBody);

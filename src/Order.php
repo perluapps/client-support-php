@@ -37,6 +37,7 @@ class Order
             'table_no' => $order->table_no,
             'order_status' => $order->order_status,
             'last_modified_by' => $order->last_modified_by,
+            'created_at' => $order->created_at,
         );
         $finalUrl = $url . "/api/v1/add-order";
         $requestBodyJson = Request\Body::Json($requestBody);

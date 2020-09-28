@@ -28,6 +28,7 @@ class Subscription
             'fee' => $subscription->fee,
             'payment_status' => $subscription->payment_status,
             'type' => $subscription->type,
+            'created_at' => $subscription->created_at,
         );
         $finalUrl = $url . "/api/v1/use-subscription";
         $requestBodyJson = Request\Body::Json($requestBody);
