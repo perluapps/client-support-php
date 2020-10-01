@@ -18,10 +18,12 @@ Library ini support Laravel :
 
 
 ## Feature Library
+* Member Register
 * Add Order
 * Use Subscription
-* Update Status Order
-* Update Status Subscription
+* Update Status Order (Done, Pending, Cancel)
+* Update Status Subscription (Request, Success)
+* Update Status Member (Unverified, Verified, Active)
 
 ### INSTALLATION
 
@@ -30,17 +32,24 @@ composer require perluapps/client-support-php
 ```
 
 ## Guidelines
-
-* Koding berstandart [PSR-2 Coding Style Guide](http://www.php-fig.org/psr/psr-2/)
-* Pastikan seluruh test yang dilakukan telah pass, jika anda menambahkan fitur baru, anda diharus kan untuk membuat unit test terkait dengan fitur tersebut.
-* Pergunakan [rebase](https://git-scm.com/book/en/v2/Git-Branching-Rebasing) untuk menghindari conflict dan merge kode
-* Jika anda menambahkan fitur, mungkin anda juga harus mengupdate halaman dokumentasi pada repository ini.
+* need composer to install
+* based on using Unirest PHP Http Client Library
+* wrapping using body or ``` Content-Type ``` type as ``` application/json ``` (need an array parse from its method)
+* need parse base url to its method likewise 
+```php
+     $url = env("URL_POS_SUPPORT");
+     $member = [
+            // array body 
+        ];
+     $clientSupport = new ClientSupport('register');
+     $clientSupport->factory()->send($url, $member);
+```
 
 # LICENSE
 
 MIT License
 
-Copyright (c) 2017 odenktools
+Copyright (c) 2017 perluapps
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
